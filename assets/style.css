@@ -1,6 +1,15 @@
 :root {
   --maxw: 980px;
   --pad: 16px;
+
+  /* Dark theme palette */
+  --bg: #0f1115;        /* page background */
+  --panel: #151820;     /* cards */
+  --panel-2: #1b1f2a;   /* horse background */
+  --text: #e6e8eb;      /* main text */
+  --muted: #a6adbb;     /* secondary text */
+  --border: #2a2f3a;    /* subtle borders */
+  --accent: #8ab4f8;    /* links / focus */
 }
 
 * { box-sizing: border-box; }
@@ -8,14 +17,19 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
+
+/* ================= HEADER ================= */
 
 .header {
   display: flex;
   align-items: flex-start;
   gap: 16px;
   padding: var(--pad);
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
 }
 
 .brand {
@@ -29,7 +43,10 @@ body {
   font-weight: 800;
   font-size: 20px;
   letter-spacing: 0.2px;
+  color: var(--text);
 }
+
+/* ================= NAV ================= */
 
 .nav {
   display: flex;
@@ -39,28 +56,44 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: inherit;
+  color: var(--muted);
   padding: 6px 10px;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border);
   border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav a:hover {
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 .nav a.active {
-  border-color: #111;
+  color: var(--text);
+  border-color: var(--accent);
 }
+
+/* ================= ASCII HORSE ================= */
 
 .horse {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 1px;
+  font-size: 1px;              /* you already tuned this */
   line-height: 1.0;
   white-space: pre;
   margin: 0;
   padding: 10px 12px;
-  border: 1px solid #e5e5e5;
+
+  background: var(--panel-2);
+  color: #e0e0e0;
+
+  border: 1px solid var(--border);
   border-radius: 12px;
+
   overflow: hidden;
   max-width: 60%;
 }
+
+/* ================= MAIN ================= */
 
 .main {
   max-width: var(--maxw);
@@ -68,16 +101,24 @@ body {
   padding: 22px var(--pad);
 }
 
+/* ================= CARDS ================= */
+
 .card {
-  border: 1px solid #eee;
+  background: var(--panel);
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 16px;
 }
 
-.project-list { display: grid; gap: 14px; }
+/* ================= PROJECTS ================= */
+
+.project-list {
+  display: grid;
+  gap: 14px;
+}
 
 .project {
-  border-top: 1px dashed #eee;
+  border-top: 1px dashed var(--border);
   padding-top: 14px;
 }
 
@@ -89,6 +130,7 @@ body {
 .project h3 {
   margin: 0;
   font-size: 16px;
+  color: var(--text);
 }
 
 .project .meta {
@@ -97,16 +139,21 @@ body {
   gap: 8px 10px;
   margin-top: 6px;
   font-size: 13px;
-  opacity: 0.9;
+  color: var(--muted);
 }
+
+/* ================= TAGS ================= */
 
 .tag {
   display: inline-block;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border);
   border-radius: 999px;
   padding: 2px 8px;
   font-size: 12px;
+  color: var(--muted);
 }
+
+/* ================= LINKS ================= */
 
 .links {
   margin-top: 8px;
@@ -115,7 +162,16 @@ body {
   gap: 10px;
 }
 
-.links a { text-decoration: none; }
+.links a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* ================= DETAILS ================= */
 
 details {
   margin-top: 10px;
@@ -124,9 +180,31 @@ details {
 details summary {
   cursor: pointer;
   font-weight: 700;
+  color: var(--accent);
+}
+
+details summary:hover {
+  text-decoration: underline;
 }
 
 details > div {
   margin-top: 8px;
   line-height: 1.5;
+  color: var(--text);
+}
+
+/* ================= TEXT ================= */
+
+p, li {
+  color: var(--text);
+}
+
+.meta {
+  color: var(--muted);
+}
+
+/* ================= SELECTION ================= */
+
+::selection {
+  background: rgba(138, 180, 248, 0.25);
 }
