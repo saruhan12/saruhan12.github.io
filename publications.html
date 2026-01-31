@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Publications</title>
+  <link rel="stylesheet" href="assets/style.css" />
+
+  <style>
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .pub-item {
+      padding: 16px 0;
+      border-top: 1px solid #eee;
+    }
+    .pub-item:first-of-type { border-top: none; padding-top: 0; }
+
+    .pub-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0 0 10px 0;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      margin: 0 0 6px 0;
+      font-size: 15px;
+    }
+
+    .pub-venue {
+      margin: 0 0 10px 0;
+      font-style: italic;
+      opacity: 0.85;
+    }
+
+    .pub-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin: 12px 0 0 0;
+      font-size: 14px;
+    }
+
+    .pub-meta .tag {
+      background: #f5f5f5;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .pub-links a {
+      padding: 6px 14px;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .pub-links a:hover {
+      background: #0056b3;
+    }
+
+    .pub-abstract {
+      margin: 12px 0 0 0;
+      padding: 12px;
+      background: #f9f9f9;
+      border-left: 3px solid #007bff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="name">Saruhan Mete Gürbüz</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="publications.html">Publications</a>
+      </nav>
+    </div>
+
+    <pre id="horse" class="horse" aria-label="ASCII horse animation"></pre>
+  </header>
+
+  <main class="main">
+    <div class="card">
+      <h1>Publications</h1>
+
+      <div class="pub-list">
+
+        <div class="pub-item">
+          <h2 class="pub-title">An Edge Feature Inclusive Variational Graph Autoencoder for PET-Driven Alzheimer's Diagnosis</h2>
+
+          <p class="pub-authors">
+            <b>Gürbüz, S. M.</b>, Adel, M.
+          </p>
+
+          <p class="pub-venue">
+            2025 14th International Conference on Image Processing, Theory, Tools &amp; Applications (IPTA), Istanbul, Türkiye, pp. 1–4.
+          </p>
+
+          <div class="pub-meta">
+            <span class="tag">Conference Paper</span>
+            <span class="tag">Graph ML</span>
+            <span class="tag">Neuroimaging</span>
+            <span>2025</span>
+          </div>
+
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/11222021" target="_blank" rel="noopener">IEEE Xplore</a>
+            <a href="https://github.com/saruhan12/GINE_VGAE_for_AD_Classification" target="_blank" rel="noopener">Code</a>
+          </div>
+
+          <div class="pub-abstract">
+            <b>Abstract:</b>Early and accurate diagnosis of Alzheimer's disease (AD) is critical for effective intervention. We propose GINEVGAE(Modified Graph Isomorphism Network with Variational Graph Autoencoder), a novel variational graph autoencoder that leverages GINEConv(Modified Graph Isomorphism Network operator) layers to integrate both node features and continuous edge weights derived from 18F-FDG PET(Fludeoxyglucose F18 positron emission tomography) scans. We construct subject-specific graphs using anatomical ROIs(Region of interest) and NBS-pruned(Network Based Statistic) connectivity, learn latent embeddings via GINE-VGAE, and classify with a support vector machine. On ADNI PET data, GINE-VGAE + SVM(Support Vector Machine) achieves 93.8% accuracy and 0.937 F1-score, outperforming ROI-based, voxel based baselines and other graph embedding based methods.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/frames.js"></script>
+  <script src="assets/horse.js"></script>
+</body>
+</html>
